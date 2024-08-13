@@ -151,7 +151,7 @@ nav .login button {
 #hero {
   background-image: url("Images/background.jpeg");
   background-size: cover; /* Cover the entire element */
-  height: 150vh; /* Full viewport height */
+  height: 250vh; /* Full viewport height */
   width: 100%; /* Full width of the containing block */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
@@ -160,7 +160,7 @@ nav .login button {
 
 #hero .hero-heading {
   margin-top: -10px;
-  padding: 50px;
+  padding: 45px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -170,19 +170,289 @@ nav .login button {
   font-weight: 800;
   font-style: normal;
   color: #bb1e3b;
-  margin-left: 50px;
+  margin-left: 30px;
 }
 #hero .hero-heading .dates {
   display: flex;
+  gap: 6px;
+  color: white;
+  text-align: center;
+  align-items: center;
+  margin-right: 20px;
+}
+#hero .hero-heading span {
+  background-color: #132347;
+  padding: 14px;
+  height: 50px;
+  margin: 10px;
+  width: 80px;
+}
+
+#hero span .today {
+  background-color: #bb1e3b;
+}
+#hero #movie #show-movie {
+  padding: 0 60px;
+  display: flex;
+  margin: auto;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+#hero #movie #show-movie .movies {
+  background-color: #13161f;
+  padding: 15px;
+  width: 280px;
+  position: relative;
+  margin-bottom: 40px;
+}
+#hero #movie #show-movie .movies:hover .layer {
+  height: 100%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    /* Reduced opacity to make it lighter */ rgba(121, 9, 9, 0.3) 50%,
+    /* Reduced opacity for a lighter red */ rgba(0, 212, 255, 0.3) 100%
+      /* Reduced opacity for a lighter cyan */
+  );
+}
+.layer {
+  width: 100%;
+  height: 0;
+  background: transparent;
+  border-radius: 10px;
+  position: absolute;
+  margin-top: 20px;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  gap: 18px;
+  padding: 0 40px;
+  text-align: center;
+  font-size: 32px;
+  transition: height 0.5s;
+}
+.layer .btn {
+  padding: 10px 35px;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  background: transparent;
+  font-size: 15px;
+  color: white;
+  border: 3px solid white;
+  transition: 0.5s ease;
+}
+.layer .btn:hover {
+  background-color: #bb1e3b;
+  border: 3px solid #bb1e3b;
+}
+#hero #movie #show-movie .movies img {
+  object-fit: cover;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+#hero #movie #show-movie .movies .title {
+  color: white;
+  font-size: 21px;
+  font-family: "Poppins", sans-serif, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23px;
+  margin-top: 12px;
+  margin-bottom: 10px;
+}
+#hero #movie #show-movie .movies .duration {
+  color: #7a7b80;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  font-style: normal;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+#hero #movie #show-movie .movies ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
   gap: 10px;
+}
+#hero #movie #show-movie .movies ul li {
+  background-color: #4caf50;
+  width: 80px;
+  padding: 3px 6px;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Detail Page*/
+
+.body {
+  background-image: url("Images/background.jpeg");
+  background-size: cover; /* Cover the entire element */
+  height: 200vh;
+  width: 100%; /* Full width of the containing block */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat;
+}
+#movie-container .container {
+  margin: 60px 70px;
+}
+#movie-container .container .child-container {
+  padding: 20px;
+  margin: 30px;
+  background-color: #213444;
+  border-radius: 20px;
+  display: flex;
+  gap: 70px;
+}
+
+#movie-container .container .child-container h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  line-height: 35px;
+  font-size: 33px;
+  font-style: normal;
+  color: white;
+  margin-bottom: 15px;
+}
+#movie-container .container .child-container .genere {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 15px;
+  color: #f2f2f2;
+
+  margin-bottom: 15px;
+}
+#movie-container .container .child-container .movdes {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 23px;
+  color: #fff;
+  width: 700px;
+
+  margin-bottom: 28px;
+}
+
+#movie-container .container .child-container .more-detail {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 23px;
+  font-size: 17px;
+  margin-bottom: 14px;
+}
+#movie-container .container .child-container .more-detail .detail-item {
+  display: flex;
+  align-items: baseline; /* Aligns the items vertically in the center */
+  margin-bottom: 12px;
+  gap: 20px; /* Adjusted gap between label and value */
+}
+
+#movie-container .container .child-container .more-detail .label {
+  font-weight: bold;
+  min-width: 140px; /* Ensures all labels have the same width */
+}
+
+#movie-container .container .child-container .more-detail .value {
+  flex-grow: 1; /* Fills the remaining space */
+
+  padding: 5px; /* Adds some padding inside the value box */
+  max-width: 580px; /* Ensures the value box does not exceed this width */
+  box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+#seat {
+  margin: 80px 100px 0px;
+}
+#seat .seat-container {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Poppins", sans-serif;
+  align-items: baseline;
+  font-weight: 400;
+  line-height: 23px;
+}
+#seat .dates {
+  display: flex;
+  gap: 6px;
   color: white;
   text-align: center;
   align-items: center;
 }
-#hero .hero-heading span {
+#seat .dates span {
   background-color: #132347;
-  padding: 15px;
-  height: 56px;
-  margin: 8px;
-  width: 80px;
+  padding: 8px 2px;
+  height: 55px;
+  font-size: 15px;
+  margin: 10px;
+  width: 55px;
+  border-radius: 8px;
+}
+.time {
+  margin: 25px 100px;
+  border-radius: 10px;
+  background-color: #213444;
+  display: flex;
+  padding: 20px 70px;
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
+}
+.time .audi {
+  background-color: #bb1e3b;
+  font-size: 20px;
+
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  height: 100px;
+  padding: 20px 50px;
+  margin-left: -70px;
+  margin-top: -48px;
+  border-top-left-radius: 10px;
+  min-width: 180px;
+}
+
+.time .free-time {
+  display: flex;
+  margin-right: 450px;
+  margin-left: 30px;
+
+  gap: 60px;
+  padding: 25px;
+}
+.time .free-time span {
+  background-color: #4caf50;
+  border-radius: 50%;
+  width: 140px;
+  width: fit-content;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 16px;
+
+  padding: 45px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.time .free-time span button {
+  color: white;
+  background-color: #4caf50;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }

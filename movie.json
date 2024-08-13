@@ -1,0 +1,62 @@
+[
+  {
+    "movie-id": 1,
+    "title": "3D: Deadpool & Wolverine",
+    "duration": "2 hours 8 mins",
+    "available_time": ["11:30 AM", "2.00 PM", "4:30 PM", "7:00 PM"],
+    "genere": "Action, Comedy, Sci-Fi",
+    "description": "Wolverine is recovering from his injuries when he crosses paths with the loudmouth Deadpool. They team up to defeat a common enemy.",
+    "director": "Shawn Levy",
+    "cast": "Ryan Reynolds, Hugh Jackman, Morena Baccarin, Matthew MacFadyen, Shiori Kutsuna, Emma Corrin, Brianna Hildebrand, Rob Delaney, Karan Soni, Leslie Uggams, Stefan Kapicic",
+    "releaseon": "August 02, 2024",
+    "image": "Images/movie/mov1.png"
+  },
+  {
+    "movie-id": 2,
+    "title": "Auron Mein Kahan Dum Tha",
+    "duration": "2 hours 25 mins",
+    "available_time": ["12:15 PM", "2.30 PM", "7:40 PM"],
+    "genere": "Action, Drama, Romance",
+    "description": "Showcases a love story that unfolds from 2002 to 2023.",
+    "director": "Neeraj Pandey",
+    "cast": "Ajay Devgn, Tabu, Jimmy Sheirgill, Shantanu Maheshwari and Saiee Manjrekar.",
+    "releaseon": "August 02, 2024",
+    "image": "Images/movie/mov2.png"
+  },
+  {
+    "movie-id": 3,
+    "title": "NUMBARI SUN",
+    "duration": "2 hours",
+    "available_time": ["3:00 PM", "5.15 PM"],
+    "genere": "Love story & Comedy",
+    "description": "The First Films with a history related to gold with Love story & Comedy.",
+    "director": "Raju Giri",
+    "cast": "Saroj Khanal, Gaurav Pahari, Namrata Sapkota, Buddhi Tamang, Rajaram Poudel, Binod Neupane, Kiran Nepali, Rajendra Khadgi etc.",
+    "releaseon": "August 09, 2024",
+    "image": "Images/movie/mov3.png"
+  },
+  {
+    "movie-id": 4,
+    "title": "MODIBENI",
+    "duration": "1 hours 55 mins",
+    "available_time": ["5:30 PM"],
+    "genere": "Love story",
+    "description": "Based on Real Love Story.",
+    "director": "Shankar Koirala",
+    "cast": "Barsha Siwakoti, Praveen Khatiwada, Amar Pratap Shrestha, Saroj Khanal, Rejina Uprety, Dilip KC, Sneha Bhattrai, Jeevan Bhattrai.",
+    "releaseon": "August 02, 2024",
+    "image": "Images/movie/mov4.png"
+  },
+  {
+    "movie-id": 5,
+    "title": "Borderlands",
+    "duration": "1 hours 45 mins",
+    "available_time": ["12:30 PM"],
+    "genere": "Action, Adventure, Comedy",
+    "description": "Based on the best-selling videogame, this all-star action-adventure follows a ragtag team of misfits on a mission to save a missing girl who holds the key to unimaginable power.",
+    "director": "Eli Roth",
+    "cast": "Jamie Lee Curtis, Haley Bennett, Gina Gershon",
+    "releaseon": "August 09, 2024",
+    "image": "Images/movie/mov5.png"
+  }
+]
