@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+body {
+  background-color: #192e41;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.title-div {
+  margin: 10px 20px;
+}
+.title-div h2 {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+.title-div p {
+  color: rgb(139, 139, 139);
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  font-style: normal;
+}
+.set {
+  color: red;
+}
+.childrenn {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 13px;
+}
+.status-container {
+  background-color: #213444;
+  margin-top: 10px;
+}
+.status-container .status {
+  padding: 10px;
+  margin-left: 5px;
+  display: flex;
+  gap: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  color: white;
+}
+.status-container .status .check {
+  display: flex;
+  gap: 8px;
+}
+.status-container .status .check .color1 {
+  width: 20px;
+  height: 20px;
+  background-color: #495760;
+  border-radius: 5px;
+}
+.color2 {
+  width: 20px;
+  height: 20px;
+  background-color: #4caf50;
+  border-radius: 5px;
+}
+.color3 {
+  width: 20px;
+  height: 20px;
+  background-color: #ffc107;
+  border-radius: 5px;
+}
+.color4 {
+  width: 20px;
+  height: 20px;
+  background-color: #e11e26;
+  border-radius: 5px;
+}
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 78vh;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(20, 45px);
+  grid-template-rows: repeat(7, 45px);
+  gap: 10px;
+}
+.cell:nth-child(1) {
+  grid-column: 3 / span 1;
+}
+.cell:nth-child(16) {
+  grid-column: 3 / span 1;
+}
+.cell:nth-child(16) {
+  grid-column: 3 / span 1;
+}
+
+.cell:nth-child(37) {
+  grid-column: 11;
+}
+.cell:nth-child(50) {
+  grid-column: 11;
+}
+.cell:nth-child(63) {
+  grid-column: 1;
+}
+.cell:nth-child(83) {
+  grid-column: 11;
+}
+.cell {
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  color: white;
+  font-weight: bold;
+  border: 1px solid #ddd;
+}
+
+#total {
+  color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  margin: 10px 50px;
+  font-size: 20px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 220px;
+  right: 520px;
+  width: 400px;
+  border: 3px solid #f1f1f1;
+  z-index: 1;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 400px;
+  height: 200px;
+
+  background-color: white;
+}
+.form-container h2 {
+  padding: 10px;
+  color: white;
+  background-color: #231f20;
+  font-family: "Poppins", sans-serif;
+}
+.form-container p {
+  max-width: 400px;
+  padding: 20px;
+  color: black;
+  background-color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Full-width input fields */
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  width: 180px;
+  margin-left: 190px;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: #fff;
+  color: black;
+}
+.form-container .cancel:hover {
+  color: black;
+  background-color: rgb(248, 245, 248);
+}

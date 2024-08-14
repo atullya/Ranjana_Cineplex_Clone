@@ -13,12 +13,14 @@
           <img src="Images/logo.png" alt="" />
         </div>
         <ul>
-          <li>Home</li>
+          <li class="active"><a href="index.html">Home</a></li>
           <li>Movie</li>
-          <li>Ticket Rate</li>
+          <li>
+            <a href="ticket.html">Ticket Rate</a>
+          </li>
         </ul>
         <div class="login">
-          <button>Login</button>
+          <button><a href="login.html">Login</a></button>
         </div>
       </nav>
     </section>
@@ -55,7 +57,7 @@
       <div class="hero-heading">
         <h1>NOW SHOWING</h1>
         <div class="dates">
-          <span class="today">TODAY</span>
+          <p class="today">TODAY</p>
           <span>TOMM</span>
           <span>14 AUG</span>
           <span>15 AUG</span>
@@ -65,7 +67,72 @@
         </div>
       </div>
       <section id="movie"><div id="show-movie"></div></section>
+      <footer>
+        <div class="col1">
+          <div class="col1-img">
+            <img src="Images/logo.png" alt="" />
+          </div>
+          <div class="col1-des">
+            <li>
+              Ranjana Cineplex is a multiplex that is fully equipped with
+              cutting-edge cinema technology and offers the finest movie
+              experience.
+            </li>
+          </div>
+        </div>
+        <div class="col2">
+          <p>Quicklinks</p>
+          <ul>
+            <li>About us</li>
+            <li>Booking</li>
+            <li>Contact</li>
+            <li>Career</li>
+            <li>Advertise With Us</li>
+          </ul>
+        </div>
+        <div class="col3">
+          <div class="payment1">
+            <h2>Prefered Payment partner</h2>
+            <img src="Images/payment/khalti.png" alt="" />
+          </div>
+          <div class="payment2">
+            <img src="Images/payment/esewa.png" alt="" />
+            <img src="Images/payment/fonepay.png" alt="" />
+          </div>
+        </div>
+        <div class="col4">
+          <div class="col4-upper">
+            <p>Contact</p>
+            <ul>
+              <li>5th Floor, Ranjana Trade Center Newroad, Kathmandu</li>
+              <li>info@ranjanacineplex.com</li>
+              <li>01-5919395 , 01-5919495</li>
+              <li>+977 9864160666</li>
+            </ul>
+          </div>
+          <div class="col4-lower">
+            <div class="message">
+              <h3>For Suggestions & Support</h3>
+              <p>wecare@ranjanacineplex.com</p>
+            </div>
+            <div class="connect">
+              <h3>Connect With Us</h3>
+              <div class="social">
+                <div class="fb">Ranjana Cineplex</div>
+                <div class="insta">ranjana_cineplex</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </section>
+    <div id="trailerModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="showvideo"></div>
+      </div>
+    </div>
+
     <script>
       let allData = [];
       async function getData() {
@@ -90,7 +157,7 @@
                 <ul>${showTime(element.available_time)}</ul>
             </p>
             <div class="layer">
-           <button class="btn">Trailer</button>
+           <button class="btn" onclick="trailer(event,${index})">Trailer</button>
            <button class="btn" onclick="detail(event, ${index})">Buy Now </button>
         </div>
         </div>`;
@@ -107,6 +174,50 @@
       }
       function showTime(times) {
         return times.map((time) => `<li>${time}</li>`).join("");
+      }
+
+      //trailer
+      function trailer(event, index) {
+        event.preventDefault(); // Prevent the default action
+
+        // Assuming `allData` is an array of movie objects
+        let videoIndex = allData[index]; // Retrieve the correct movie data using index
+        console.log(videoIndex);
+        console.log(videoIndex.vid);
+
+        // Check if the video URL exists
+        if (videoIndex && videoIndex.vid) {
+          let modal = document.getElementById("trailerModal");
+          let showvideo = document.getElementById("showvideo");
+
+          // Set the video URL in the iframe
+          showvideo.innerHTML = `
+      <iframe
+        id="videoframe"
+        width="560" height="315"
+        src="${videoIndex.vid}"
+     title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+
+          // Display the modal
+          modal.style.display = "block";
+
+          // Close the modal when the user clicks on <span> (x)
+          let closeBtn = document.querySelector(".close");
+          closeBtn.onclick = function () {
+            modal.style.display = "none";
+            showvideo.innerHTML = ""; // Remove the video when closing the modal
+          };
+
+          // Close the modal when the user clicks anywhere outside of the modal
+          window.onclick = function (event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+              showvideo.innerHTML = ""; // Remove the video when closing the modal
+            }
+          };
+        } else {
+          console.error("Video URL not found for this movie.");
+        }
       }
 
       getData();

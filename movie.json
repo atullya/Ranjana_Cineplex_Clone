@@ -9,7 +9,8 @@
     "director": "Shawn Levy",
     "cast": "Ryan Reynolds, Hugh Jackman, Morena Baccarin, Matthew MacFadyen, Shiori Kutsuna, Emma Corrin, Brianna Hildebrand, Rob Delaney, Karan Soni, Leslie Uggams, Stefan Kapicic",
     "releaseon": "August 02, 2024",
-    "image": "Images/movie/mov1.png"
+    "image": "Images/movie/mov1.png",
+    "vid": "https://youtu.be/Idh8n5XuYIA"
   },
   {
     "movie-id": 2,
@@ -21,7 +22,8 @@
     "director": "Neeraj Pandey",
     "cast": "Ajay Devgn, Tabu, Jimmy Sheirgill, Shantanu Maheshwari and Saiee Manjrekar.",
     "releaseon": "August 02, 2024",
-    "image": "Images/movie/mov2.png"
+    "image": "Images/movie/mov2.png",
+    "vid": "https://youtu.be/2lr5h0IqArI"
   },
   {
     "movie-id": 3,
@@ -33,7 +35,8 @@
     "director": "Raju Giri",
     "cast": "Saroj Khanal, Gaurav Pahari, Namrata Sapkota, Buddhi Tamang, Rajaram Poudel, Binod Neupane, Kiran Nepali, Rajendra Khadgi etc.",
     "releaseon": "August 09, 2024",
-    "image": "Images/movie/mov3.png"
+    "image": "Images/movie/mov3.png",
+    "vid": "https://youtu.be/9NgD-Or708U"
   },
   {
     "movie-id": 4,
@@ -45,7 +48,8 @@
     "director": "Shankar Koirala",
     "cast": "Barsha Siwakoti, Praveen Khatiwada, Amar Pratap Shrestha, Saroj Khanal, Rejina Uprety, Dilip KC, Sneha Bhattrai, Jeevan Bhattrai.",
     "releaseon": "August 02, 2024",
-    "image": "Images/movie/mov4.png"
+    "image": "Images/movie/mov4.png",
+    "vid": "https://youtu.be/02EPwf8c8Rk"
   },
   {
     "movie-id": 5,
@@ -57,6 +61,7 @@
     "director": "Eli Roth",
     "cast": "Jamie Lee Curtis, Haley Bennett, Gina Gershon",
     "releaseon": "August 09, 2024",
-    "image": "Images/movie/mov5.png"
+    "image": "Images/movie/mov5.png",
+    "vid": "https://youtu.be/lU_NKNZljoQ"
   }
 ]

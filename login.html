@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ranjana Cineplex</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body class="body">
+    <section id="header">
+      <nav>
+        <div class="logo">
+          <img src="Images/logo.png" alt="" />
+        </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li>Movie</li>
+          <li>
+            <a href="ticket.html">Ticket Rate</a>
+          </li>
+        </ul>
+        <div class="login">
+          <button><a href="login.html">Login</a></button>
+        </div>
+      </nav>
+    </section>
+    <!-- <section id="sign">
+      <div class="container">
+        <div class="title">
+          <h2>SIGN IN</h2>
+          <h2>SIGN UP</h2>
+        </div>
+        <form action="">
+          <div class="input">
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+          </div>
+
+          <div class="but">
+            <button>SIGN IN</button>
+            <p>Forgot Password?</p>
+          </div>
+        </form>
+      </div>
+    </section> -->
+
+    <section id="signn">
+      <div class="sign-container">
+        <div class="title">
+          <div class="tab-titles">
+            <p class="tab-links active-link" onclick="opentab('skills')">
+              SIGN IN
+            </p>
+            <p class="tab-links" onclick="opentab('experience')">SIGN UP</p>
+          </div>
+        </div>
+
+        <div class="tab-contents active-tab" id="skills">
+          <section id="sign">
+            <div class="container">
+              <form action="">
+                <div class="input">
+                  <input type="email" placeholder="Email" />
+                  <input type="password" placeholder="Password" />
+                </div>
+
+                <div class="but">
+                  <button>SIGN IN</button>
+                  <p>Forgot Password?</p>
+                </div>
+              </form>
+            </div>
+          </section>
+        </div>
+        <div class="tab-contents" id="experience">
+          <div class="sign-up">
+            <div class="signbody">
+              <h3>Complete The Form Sign Up</h3>
+              <form action="">
+                <input type="text" placeholder="First Name*" />
+                <input type="text" placeholder="Last Name*" />
+                <input type="email" placeholder="Email*" />
+                <input type="number" placeholder="Mobile*" />
+                <input type="password" placeholder="Passowrd*" />
+                <input type="password" placeholder="Confirm Password*" />
+              </form>
+              <button>Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <style>
+      .sign-up {
+        background-color: #213444;
+        border-radius: 10px;
+        width: 560px;
+        height: 370px;
+      }
+      .signbody {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+      .signbody h3 {
+        color: white;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+      }
+      .signbody form {
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 220px 220px;
+        columns: 25px;
+        gap: 20px;
+      }
+      .signbody form input {
+        background-color: #425768;
+        width: 100%;
+        padding: 10px;
+        margin-top: 8px;
+        margin-bottom: 3px;
+        height: 45px;
+        border-radius: 10px;
+        outline: none;
+        color: #9999a6;
+      }
+      .signbody form input::placeholder {
+        color: #9999a6;
+      }
+      .signbody form input:hover {
+        background-color: #fff;
+        color: black;
+      }
+      .sign-up button {
+        outline: none;
+        border: none;
+        background-color: #bb1e3b;
+        padding: 12px 35px;
+        border-radius: 10px;
+        font-family: "Poppins", sans-serif;
+        color: white;
+        width: 150px;
+        margin-left: 20px;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+    </style>
+    <script>
+      let tablinks = document.getElementsByClassName("tab-links");
+      let tabcontents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+    </script>
+  </body>
+</html>

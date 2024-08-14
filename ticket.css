@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.body {
+  background-image: url("Images/background.jpeg");
+  background-size: cover; /* Cover the entire element */
+  height: 250vh; /* Full viewport height */
+  width: 100%; /* Full width of the containing block */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+}
+.ticket-div {
+  padding: 60px 20px;
+  background-color: #213444;
+  width: 1100px;
+  height: 600px;
+  margin: auto;
+  margin-top: 40px;
+  border-radius: 15px;
+}
+.ticket-div h1 {
+  font-size: 28px;
+  color: #bb1e3b;
+  margin-top: -50px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  margin-left: 10px;
+}
+.ticket-div .show-time {
+  display: flex;
+  flex-direction: column;
+}
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 10px 0 0 10px;
+  background-color: #213444; /* Semi-transparent background */
+  border-radius: 1px; /* Rounded corners */
+  overflow: hidden; /* Ensure rounded corners are visible */
+}
+
+th {
+  background-color: #bb1e3b; /* Heading background color */
+  color: #fff; /* Text color for headings */
+  padding: 10px;
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+
+  border-bottom: 1px solid #30465a; /* Adds a small line after each row */
+}
+.wed {
+  height: 10px;
+}
+td {
+  padding: 10px;
+  border-bottom: 0.1px solid #30465a;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  color: #fff;
+  text-align: left;
+  width: 240px;
+}
+
+tr {
+  border-bottom: 0.5px solid #30465a; /* Adds a small line after each row */
+}
+
+/* Optional: add a little space between table rows */
+tr + tr {
+  margin-top: 10px;
+}
