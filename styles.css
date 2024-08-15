@@ -61,7 +61,35 @@ nav .login button {
   color: white;
   font-family: "Poppins", sans-serif;
 }
+nav .logout button {
+  width: 70px;
+  border: none;
+  outline: none;
+  background-color: #424242;
+  margin-left: 30px;
+  margin-right: 20px;
+  padding: 4px 9px;
+  border-radius: 30px;
+}
+nav .logout button a {
+  text-decoration: none;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
 
+nav .after {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+nav .after h2 {
+  font-size: 18px;
+}
+nav .after .icon {
+  font-size: 25px;
+}
 /*Slider */
 .slideshow-container {
   max-width: 100%;
@@ -231,6 +259,7 @@ nav .login button {
 }
 #hero .hero-heading .dates {
   display: flex;
+  flex-wrap: wrap;
   gap: 6px;
   color: white;
   text-align: center;
@@ -517,4 +546,192 @@ nav .login button {
   outline: none;
   border: none;
   cursor: pointer;
+}
+
+/* Footer */
+
+footer {
+  cursor: pointer;
+  display: flex;
+  padding: 34px 49px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.col1 {
+  display: flex;
+  flex-direction: column;
+}
+.col1-des li {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: white;
+  font-size: 17px;
+  width: 300px;
+  line-height: 24px;
+  margin-top: 20px;
+}
+.col2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.col2 p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-style: normal;
+  color: #9e8a74;
+  font-size: 18px;
+  line-height: 24px;
+}
+.col2 ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+.col2 ul li {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  margin: 5px 0px;
+  font-style: normal;
+  color: #fff;
+  font-size: 17px;
+  line-height: 24px;
+}
+.col3 {
+  display: flex;
+  flex-direction: column;
+}
+.col3 .payment1 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.col3 .payment1 h2 {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+.col3 .payment1 img {
+  height: 70px;
+  width: 110px;
+}
+.col3 .payment2 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.col3 .payment2 .esewa {
+  height: 90px;
+  width: 120px;
+}
+.col3 p {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  margin-bottom: -10px;
+}
+.col3 .payment2 .phonepay {
+  height: 40px;
+  width: 130px;
+}
+.col4 {
+  display: flex;
+  flex-direction: column;
+}
+.col4 .col4-upper p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-style: normal;
+  color: #9e8a74;
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+.col4 .col4-upper ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+.col4 .col4-upper ul li {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+
+  font-style: normal;
+
+  font-size: 14px;
+  margin-top: 14px;
+  width: 200px;
+  color: #bb1e3b;
+  margin-left: 12px;
+}
+.col4 .col4-lower .message {
+  display: flex;
+  flex-direction: column;
+}
+.col4 .col4-lower .message h3,
+.col4 .col4-lower .connect h3 {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin: 15px 0px 10px 0;
+}
+.col4 .col4-lower .message p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+
+  font-style: normal;
+
+  font-size: 14px;
+
+  width: 200px;
+  color: #bb1e3b;
+}
+.col4 .col4-lower .message .env {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.col4 .col4-lower .message .env .mail,
+.col4 .col4-lower .connect .social .mail {
+  font-size: 20px;
+  color: #fff;
+}
+.col4 .col4-lower .connect .social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+
+  font-style: normal;
+}
+.col4 .col4-lower .connect .social .fb,
+.col4 .col4-lower .connect .social .insta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.col4 .col4-lower .connect .social .fb .fa-brands,
+.col4 .col4-lower .connect .social .insta .fa-instagram {
+  font-size: 20px;
+  color: #fff;
+}
+.col4 .col4-lower .connect .social p {
+  color: #bb1e3b;
 }
