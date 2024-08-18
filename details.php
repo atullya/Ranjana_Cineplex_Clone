@@ -1,3 +1,16 @@
+<?php
+session_start(); // Start the session
+
+// Database connection
+include('dbconnection.php');
+
+// Handle logout
+if (isset($_GET['logout'])) {
+    session_destroy();
+    header("Location: index.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,22 +20,46 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="body">
-    <section id="header">
-      <nav>
-        <div class="logo">
-          <img src="Images/logo.png" alt="" />
-        </div>
-        <ul>
-          <li><a href="index.php">Home</a></li>
-          <li>Movie</li>
-          <li>
-            <a href="ticket.html">Ticket Rate</a>
-          </li>
-        </ul>
-        <div class="login">
-          <button><a href="login.php">Login</a></button>
-        </div>
-      </nav>
+  <section id="header">
+        <?php
+        if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+            echo '
+            <nav>
+                <div class="logo">
+                    <img src="Images/logo.png" alt="" />
+                </div>
+                <ul>
+                    <li class="active"><a href="index.php">Home</a></li>
+                    <li>Movie</li>
+                    <li><a href="ticket.php">Ticket Rate</a></li>
+                </ul>
+                <div class="login">
+                    <button><a href="login.php">Login</a></button>
+                </div>
+            </nav>';
+        } else {
+            echo '
+            <nav>
+                <div class="logo">
+                    <img src="Images/logo.png" alt="" />
+                </div>
+                <ul>
+                    <li class="active"><a href="index.php">Home</a></li>
+                    <li>My Tickets</li>
+                    <li><a href="booking.php">Booking</a></li>
+                    <li><a href="movie.php">Movie</a></li>
+                    <li><a href="ticket.php">Ticket Rate</a></li>
+                </ul>
+                <div class="after">
+                <ion-icon name="person-circle-outline" class="icon"></ion-icon>
+                <h2 class="session-user">' . htmlspecialchars($_SESSION["email"]) . '</h2>
+                <div>
+                <div class="logout">
+                    <button><a href="?logout=true">Logout</a></button>
+                </div>
+            </nav>';
+        }
+        ?>
     </section>
     <div id="movie-container">
       <div class="container">
@@ -104,7 +141,7 @@
         "time": time         
     };
     localStorage.setItem('bookdetail',JSON.stringify(bookdetail));
-    window.location.href = "bookshow.html";
+    window.location.href = "bookshow.php";
 }
     </script>
   </body>

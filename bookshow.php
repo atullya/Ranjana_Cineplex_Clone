@@ -1,3 +1,11 @@
+<?php
+session_start(); // Start the session
+
+// Database connection
+include('dbconnection.php');
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,7 +19,11 @@
     <link rel="stylesheet" href="bookshow.css" />
   </head>
   <body>
-    <div class="title-div"></div>
+    <?php
+  if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header("Location: login.php");
+  }else{
+echo'<div class="title-div"></div>
     <div class="mid-div">
       <p class="childrenn">
         Children above 3 Feet will require a separate ticket
@@ -176,7 +188,10 @@
     <section id="total">
       Rs.
       <div id="showsum">0</div>
-    </section>
+    </section>';
+  }
+    ?>
+    
 
     <script>
       function openForm() {

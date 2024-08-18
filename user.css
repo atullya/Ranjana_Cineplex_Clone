@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+.tab-contents {
+  display: none;
+}
+.tab-contents.active-tab {
+  display: block;
+}
+#container-body {
+  margin: auto;
+  width: 1080px;
+  cursor: pointer;
+}
+
+.tab-titles {
+  color: white;
+  display: flex;
+  margin-top: 40px;
+  margin-bottom: 20px;
+
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: white;
+}
+.tab-titles .tab-links {
+  padding: 10px;
+  width: 170px;
+  background-color: #dddddd;
+  color: black;
+}
+.tab-titles .active-link {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: #bb1e3b;
+  color: white;
+}
+.tab-contents {
+  margin: auto;
+  background-color: #213444;
+  padding: 45px 30px;
+}
+.password {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.password .curr,
+.ptext,
+.newp,
+.newcp {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.password {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+.password input {
+  width: auto;
+  height: 38px;
+  border-radius: 5px;
+  outline: none;
+  text-indent: 20px;
+}
+.password button {
+  margin-top: 10px;
+  outline: none;
+  border: none;
+  background-color: #bb1e3b;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  height: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  letter-spacing: 1px;
+  width: 70px;
+}
+.user {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.user input {
+  width: auto;
+  height: 38px;
+  border-radius: 5px;
+  outline: none;
+  text-indent: 20px;
+}
+
+.user .form-cont input {
+  width: 500px;
+  height: 38px;
+  border-radius: 5px;
+  flex-wrap: wrap;
+}
+.user .form-cont {
+  display: flex;
+  justify-content: space-between;
+}
+.user .form-cont .col1,
+.col22 {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.tab-contents .user .username {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+.form-cont .ptext {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+.username,
+.fname,
+.gender,
+.location,
+.resphone,
+.about-you,
+.lname,
+.birthdate,
+.email,
+.mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.gender .select-gen {
+  display: flex;
+  width: 70px;
+  align-items: center;
+  gap: 8px;
+}
+.user .about-you input {
+  height: 59px;
+}
+.user .form-cont .col1 button {
+  margin-top: 10px;
+  outline: none;
+  border: none;
+  background-color: #425768;
+  padding: 18px;
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  height: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  letter-spacing: 1px;
+  width: 100px;
+}
+.gender {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+/* The popup form - hidden by default */
+.form-popup {
+  display: block;
+  position: fixed;
+  bottom: 220px;
+  right: 520px;
+  width: 400px;
+  border: 3px solid #f1f1f1;
+  z-index: 1;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 400px;
+  height: 200px;
+
+  background-color: white;
+}
+.form-container h2 {
+  padding: 10px;
+  color: white;
+  background-color: #231f20;
+  font-family: "Poppins", sans-serif;
+}
+.form-container p {
+  max-width: 400px;
+  padding: 20px;
+  color: black;
+  background-color: white;
+  font-family: "Poppins", sans-serif;
+}
+.form-container .btn {
+  color: white;
+  padding: 10px 15px;
+  border: none;
+
+  cursor: pointer;
+  width: 180px;
+  margin-left: 190px;
+  margin-bottom: 10px;
+
+  font-size: 16px;
+}
+.form-container .btn span {
+  font-size: 16px;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: #fff;
+  color: black;
+}
+.form-container .cancel:hover {
+  color: black;
+  background-color: rgb(248, 245, 248);
+}

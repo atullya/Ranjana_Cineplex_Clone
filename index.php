@@ -3,6 +3,9 @@ session_start(); // Start the session
 
 // Database connection
 include('dbconnection.php');
+$sql ="Select * from users";
+$result=mysqli_query($conn,$sql);
+$row=mysqli_fetch_assoc($result);
 
 // Handle logout
 if (isset($_GET['logout'])) {
@@ -36,7 +39,7 @@ if (isset($_GET['logout'])) {
                 <ul>
                     <li class="active"><a href="index.php">Home</a></li>
                     <li>Movie</li>
-                    <li><a href="ticket.html">Ticket Rate</a></li>
+                    <li><a href="ticket.php">Ticket Rate</a></li>
                 </ul>
                 <div class="login">
                     <button><a href="login.php">Login</a></button>
@@ -51,14 +54,16 @@ if (isset($_GET['logout'])) {
                 <ul>
                     <li class="active"><a href="index.php">Home</a></li>
                     <li>My Tickets</li>
-                    <li><a href="ticket.html">Booking</a></li>
-                    <li><a href="ticket.html">Movie</a></li>
-                    <li><a href="ticket.html">Ticket Rate</a></li>
+                    <li><a href="booking.php">Booking</a></li>
+                    <li><a href="movie.php">Movie</a></li>
+                    <li><a href="ticket.php">Ticket Rate</a></li>
                 </ul>
                 <div class="after">
-                <ion-icon name="person-circle-outline" class="icon"></ion-icon>
-                <h2 class="session-user">' . htmlspecialchars($_SESSION["email"]) . '</h2>
-                <div>
+                    <ion-icon name="person-circle-outline" class="icon"></ion-icon>
+                    <a href="user.php?uid=' . $row["uid"] . '">
+                        <h2 class="session-user">' . htmlspecialchars($_SESSION["email"]) . '</h2>
+                    </a>
+                </div>
                 <div class="logout">
                     <button><a href="?logout=true">Logout</a></button>
                 </div>
@@ -219,7 +224,7 @@ if (isset($_GET['logout'])) {
         let dataindex = allData[index];
         console.log(dataindex);
         localStorage.setItem("moviedetail", JSON.stringify(dataindex));
-        window.location.href = "details.html";
+        window.location.href = "details.php";
       }
       function showTime(times) {
         return times.map((time) => `<li>${time}</li>`).join("");

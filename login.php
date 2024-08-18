@@ -110,7 +110,7 @@ mysqli_close($conn);
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li>Movie</li>
-                <li><a href="ticket.html">Ticket Rate</a></li>
+                <li><a href="ticket.php">Ticket Rate</a></li>
             </ul>
             <div class="login">
                 <button><a href="login.html">Login</a></button>
