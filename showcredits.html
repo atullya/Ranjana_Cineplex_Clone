@@ -1,0 +1,194 @@
+<!-- 
+******************************************************************** 
+just made for some api testing not include in main file!!!! 
+********************************************************************-->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      async function getMovieCredits(movieId) {
+        let response = await fetch(
+          `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`
+        );
+        let data = await response.json();
+        console.log(data);
+
+        // Extract director from the crew array
+        let director = data.crew.find((member) => member.job === "Director");
+        console.log(`Director: ${director ? director.name : "Not Found"}`);
+
+        // Extract cast members
+        let cast = data.cast.map((actor) => actor.name).join(", ");
+        console.log(`Cast: ${cast}`);
+
+        return {
+          director: director ? director.name : "Not Found",
+          cast: cast,
+        };
+      }
+
+      // Example usage with a specific movie ID
+      getMovieCredits(533535);
+    </script>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Trailer Display</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      #video-container {
+        margin-top: 20px;
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        background: #000;
+      }
+
+      #video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+      }
+
+      .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="myBtn">Open Modal</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modal-video-container"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1>Movie Trailer</h1>
+      <div id="video-container"></div>
+    </div>
+
+    <script>
+      const apiKey = "4e44d9029b1270a757cddc766a1bcb63";
+      const movieId = "1079091"; // Replace with the actual movie ID
+
+      // Fetch movie details to get the video information
+      fetch(
+        `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${apiKey}&language=en-US`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          const videoKey = data.results[0]?.key; // Assuming the first video is the one you want
+          if (videoKey) {
+            // Add the video to the video container and modal
+            displayVideo(videoKey);
+          } else {
+            document.getElementById("video-container").innerText =
+              "No video found.";
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching movie data:", error);
+          document.getElementById("video-container").innerText =
+            "Error fetching video.";
+        });
+
+      function displayVideo(videoKey) {
+        const videoUrl = `https://www.youtube.com/embed/${videoKey}`;
+        const iframe = document.createElement("iframe");
+        iframe.src = videoUrl;
+        iframe.width = "560";
+        iframe.height = "315";
+        iframe.frameBorder = "0";
+        iframe.allow =
+          "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+        iframe.allowFullscreen = true;
+
+        // Add the video to the modal
+        document.getElementById("modal-video-container").appendChild(iframe);
+
+        // Add click event to open the modal
+        document.getElementById("myBtn").onclick = function () {
+          document.getElementById("myModal").style.display = "block";
+        };
+
+        // Add click event to close the modal
+        document.querySelector(".close").onclick = function () {
+          document.getElementById("myModal").style.display = "none";
+        };
+
+        // Close modal if user clicks outside of modal content
+        window.onclick = function (event) {
+          if (event.target == document.getElementById("myModal")) {
+            document.getElementById("myModal").style.display = "none";
+          }
+        };
+      }
+    </script>
+  </body>
+</html>

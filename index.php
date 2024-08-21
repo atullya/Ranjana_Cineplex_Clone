@@ -38,7 +38,7 @@ if (isset($_GET['logout'])) {
                 </div>
                 <ul>
                     <li class="active"><a href="index.php">Home</a></li>
-                    <li>Movie</li>
+                    <li ><a href="movie.html">Movie</a></li>
                     <li><a href="ticket.php">Ticket Rate</a></li>
                 </ul>
                 <div class="login">

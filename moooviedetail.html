@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>moo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="moooviedetail.css" />
+  </head>
+  <body class="body">
+    <section id="header">
+      <nav>
+        <div class="logo">
+          <img src="Images/logo.png" alt="" />
+        </div>
+        <ul>
+          <li><a href="index.php">Home</a></li>
+          <li class="active"><a href="movie.html">Movie</a></li>
+          <li><a href="ticket.php">Ticket Rate</a></li>
+        </ul>
+        <div class="login">
+          <button><a href="login.php">Login</a></button>
+        </div>
+      </nav>
+      ';
+    </section>
+    <div class="container">
+      <div class="child-container"></div>
+    </div>
+    <script>
+      window.onload = getMovieDetail;
+
+      async function getMovieDetail() {
+        let parseMovie = localStorage.getItem("selectedMovies");
+        let parsedData = JSON.parse(parseMovie);
+        console.log(parsedData);
+
+        let showdiv = document.querySelector(".child-container");
+        let movid = parsedData.id;
+
+        // Build content with genres placeholder
+        let content = `
+    <div class="imagediv">
+        <img src="https://image.tmdb.org/t/p/w500${parsedData.poster_path}">
+    </div>
+    <div class="movie-description">
+      <h1>${parsedData.title}</h1>
+      <p class="genere" id="genre">${parsedData.genere}</p>
+      <p class="movdes">${parsedData.overview}</p>
+      <div class="more-detail">
+        <div class="detail-item">
+          <span class="label">Director:</span>
+          <span class="value" id="director"></span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Cast:</span>
+          <span class="value" id="cast"></span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Release On:</span>
+          <span class="value">${parsedData.release_date}</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Producer:</span>
+          <span class="value" id="producer"></span>
+        </div>
+      </div>
+    </div>
+  `;
+
+        showdiv.innerHTML = content;
+
+        // Fetch credits and movie details
+        await showcredits(movid);
+      }
+
+      async function showcredits(movieId) {
+        // Fetch movie credits
+        let creditsResponse = await fetch(
+          `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`
+        );
+        let creditsData = await creditsResponse.json();
+        console.log(creditsData);
+
+        // Fetch movie details
+        let detailsResponse = await fetch(
+          `https://api.themoviedb.org/3/movie/${movieId}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`
+        );
+        let detailsData = await detailsResponse.json();
+        console.log(detailsData);
+
+        // Extract genres from movie details
+        let genres = detailsData.genres.map((genre) => genre.name).join(", ");
+        let genreElement = document.getElementById("genre");
+        genreElement.innerHTML = genres;
+        console.log(`Genres: ${genres}`);
+
+        // Extract director from the crew array
+        let director = creditsData.crew.find(
+          (member) => member.job === "Director"
+        );
+        let directorname = document.getElementById("director");
+        directorname.innerHTML = director ? director.name : "Not Found";
+
+        // Extract cast members
+        let castname = document.getElementById("cast");
+        let cast = creditsData.cast
+          .slice(0, 5)
+          .map((actor) => actor.name)
+          .join(", ");
+        castname.innerHTML = cast;
+        console.log(`Cast: ${cast}`);
+
+        // Extract producer from the crew array
+        let producer = creditsData.crew.find(
+          (member) => member.job === "Producer"
+        );
+        let producername = document.getElementById("producer");
+        producername.innerHTML = producer
+          ? producer.name
+          : "Producer information not available";
+        console.log(`Producer: ${producer ? producer.name : "Not Found"}`);
+      }
+    </script>
+  </body>
+</html>

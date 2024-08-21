@@ -1,0 +1,53 @@
+.child-container {
+  padding: 20px;
+  margin: 30px;
+  background-color: #213444;
+  border-radius: 20px;
+  display: flex;
+  gap: 70px;
+}
+.child-container h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  line-height: 35px;
+  font-size: 33px;
+  font-style: normal;
+  color: white;
+  margin-bottom: 15px;
+}
+.child-container .genere {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 15px;
+  color: #f2f2f2;
+
+  margin-bottom: 15px;
+}
+.child-container .movdes {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 23px;
+  color: #fff;
+  width: 700px;
+
+  margin-bottom: 28px;
+}
+.child-container .more-detail {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 23px;
+  font-size: 17px;
+  margin-bottom: 14px;
+}
+.child-container .more-detail .detail-item {
+  display: flex;
+  align-items: baseline; /* Aligns the items vertically in the center */
+  margin-bottom: 12px;
+  gap: 20px; /* Adjusted gap between label and value */
+}
+img {
+  max-width: 450px;
+}
