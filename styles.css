@@ -242,7 +242,7 @@ nav .after .icon {
 #hero {
   background-image: url("Images/background.jpeg");
   background-size: cover; /* Cover the entire element */
-  height: 250vh; /* Full viewport height */
+  height: 370vh; /* Full viewport height */
   width: 100%; /* Full width of the containing block */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
@@ -295,14 +295,22 @@ nav .after .icon {
   flex-wrap: wrap;
   gap: 32px;
 }
-#hero #movie #show-movie .movies {
+#carousel1 {
+  display: flex;
+  margin: auto;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+#hero #movie #show-movie .movies,
+#carousel1 .movies {
   background-color: #13161f;
   padding: 15px;
   width: 280px;
   position: relative;
   margin-bottom: 40px;
 }
-#hero #movie #show-movie .movies:hover .layer {
+#hero #movie #show-movie .movies:hover .layer,
+#carousel .movies:hover .layer {
   height: 100%;
   background: rgb(0, 0, 0);
   background: linear-gradient(
@@ -349,7 +357,8 @@ nav .after .icon {
   background-color: #bb1e3b;
   border: 3px solid #bb1e3b;
 }
-#hero #movie #show-movie .movies img {
+#hero #movie #show-movie .movies img,
+#carousel1 .movies img {
   object-fit: cover;
   width: 100%;
   max-width: 100%;
@@ -368,6 +377,11 @@ nav .after .icon {
   line-height: 23px;
   margin-top: 12px;
   margin-bottom: 10px;
+}
+#carousel1 .title {
+  color: white;
+  font-size: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 #hero #movie #show-movie .movies .duration {
   color: #7a7b80;
@@ -740,4 +754,65 @@ footer {
 }
 .col4 .col4-lower .connect .social p {
   color: #bb1e3b;
+}
+
+/* Top Rated*/
+#top-rated {
+  padding: 20px;
+  margin-left: 40px;
+}
+#top-rated h2 {
+  color: #bb1e3b;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 25px;
+}
+#top-rated .main-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tab-titles {
+  display: flex;
+  justify-content: center;
+  margin-right: 30px;
+  padding: 8px;
+  background-color: #ffffff;
+  gap: 20px;
+
+  border-radius: 30px;
+  margin-bottom: 25px;
+}
+.tab-links {
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+  cursor: pointer;
+  padding: 10px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 500;
+  border-radius: 30px;
+}
+.tab-links.active-link {
+  background-color: #f0821a;
+  color: white;
+}
+
+.tab-links.active-link::after {
+  width: 50%;
+}
+.tab-contents ul li {
+  list-style: none;
+  margin: 10px 0;
+}
+.tab-contents ul li span {
+  color: #b54769;
+  font-size: 15px;
+}
+.tab-contents {
+  display: none;
+}
+.tab-contents.active-tab {
+  display: block;
 }

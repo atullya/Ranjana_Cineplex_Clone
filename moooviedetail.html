@@ -45,7 +45,11 @@
         // Build content with genres placeholder
         let content = `
     <div class="imagediv">
-        <img src="https://image.tmdb.org/t/p/w500${parsedData.poster_path}">
+        <img style=" object-fit: cover;
+  width: 100%;
+  max-width: 800px;
+  height: 600px;
+  border-radius: 15px;" src="https://image.tmdb.org/t/p/w500${parsedData.poster_path}">
     </div>
     <div class="movie-description">
       <h1>${parsedData.title}</h1>

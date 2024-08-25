@@ -114,7 +114,38 @@ if (isset($_GET['logout'])) {
                 <span>18 AUG</span>
             </div>
         </div>
-        <section id="movie"><div id="show-movie"></div></section>
+
+
+
+        <!-- <section id="movie"><div id="show-movie"></div></section> -->
+        <section id="movie">
+  <div id="show-movie"></div>
+</section>
+<section id="top-rated">
+  <div class="main-heading">
+    <h2>Top Rated</h2>
+    <div class="tab-titles">
+      <p class="tab-links active-link" onclick="opentab('movies', 'movie');">
+        Movies
+      </p>
+      <p class="tab-links" onclick="opentab('tvshows', 'tv');">
+        TV Shows
+      </p>
+    </div>
+  </div>
+
+  <div class="tab-contents active-tab" id="movies">
+   
+    <div id="showmovie"></div>
+  </div>
+
+  <div class="tab-contents" id="tvshows">
+  
+    <div id="tv-show"></div>
+  </div>
+  <div id="carousel1"></div>
+</section>
+
         <footer>
             <div class="col1">
                 <div class="col1-img">
@@ -188,6 +219,7 @@ if (isset($_GET['logout'])) {
     </div>
 
     <script>
+     
       let allData = [];
       async function getData() {
         let response = await fetch("movie.json");
@@ -269,6 +301,78 @@ if (isset($_GET['logout'])) {
       }
 
       getData();
+
+      //for most rated
+      function opentab(tabname, type) {
+  // Select all elements with the class 'tab-links' and 'tab-contents'
+  let tablinks = document.getElementsByClassName("tab-links");
+  let tabcontents = document.getElementsByClassName("tab-contents");
+
+  // Remove the 'active-link' class from all tab links
+  for (let tablink of tablinks) {
+    tablink.classList.remove("active-link");
+  }
+
+  // Remove the 'active-tab' class from all tab contents
+  for (let tabcontent of tabcontents) {
+    tabcontent.classList.remove("active-tab");
+  }
+
+  // Add the 'active-link' class to the clicked tab link
+  event.currentTarget.classList.add("active-link");
+
+  // Add the 'active-tab' class to the corresponding tab content
+  document.getElementById(tabname).classList.add("active-tab");
+
+  // Change the endpoint based on the selected tab
+  endpoint = type; // 'movie' for movies tab, 'tv' for TV shows tab
+  fetchData(); // Fetch data again when the tab is switched
+}
+
+let endpoint = "movie"; // Default to movie
+
+function fetchData() {
+  fetch(
+    `https://api.themoviedb.org/3/${endpoint}/top_rated?api_key=4e44d9029b1270a757cddc766a1bcb63`
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      displaydata(data.results);
+      console.log(data.results);
+    })
+    .catch((error) => console.error("Error fetching data:", error));
+}
+
+function displaydata(data) {
+  const carousel = document.getElementById("carousel1");
+  carousel.innerHTML = ""; // Clear existing content
+
+  data.slice(0, 4).forEach((item,index) => {
+    const carouselItem = document.createElement("div");
+    carouselItem.className = "carouselItem";
+    carouselItem.innerHTML = `
+  <div class="movies">
+              <img src="https://image.tmdb.org/t/p/w500${
+        item.poster_path
+      }" alt="${item.title || item.name}">
+                <p class="title">${item.title || item.name}</p>
+             
+                
+                <div class="layer">
+                  <button class="btn" onclick="trailer(event,${index})">Trailer</button>
+                  <button class="btn" onclick="detail(event, ${index})">Buy Now </button>
+                </div>
+            </div>
+
+     
+    
+    `;
+    carousel.appendChild(carouselItem);
+  });
+}
+
+// Initially fetch movie data
+fetchData();
       </script>
       <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
       <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

@@ -121,7 +121,7 @@ mysqli_close($conn);
     <section id="signn">
         <div class="sign-container">
             <div class="title">
-                <div class="tab-titles">
+                <div class="tab-titles1">
                     <p class="tab-links <?php echo $activeTab == 'skills' ? 'active-link' : ''; ?>" onclick="opentab('skills')">SIGN IN</p>
                     <p class="tab-links <?php echo $activeTab == 'experience' ? 'active-link' : ''; ?>" onclick="opentab('experience')">SIGN UP</p>
                 </div>
@@ -148,7 +148,7 @@ mysqli_close($conn);
             <div class="tab-contents <?php echo $activeTab == 'experience' ? 'active-tab' : ''; ?>" id="experience">
                 <div class="sign-up">
                     <div class="signbody">
-                        <h3>Complete The Form Sign Up</h3>
+                        <h3 class="h3">Complete The Form Sign Up</h3>
                         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                             <input type="text" placeholder="First Name*" name="fname" required />
                             <input type="text" placeholder="Last Name*" name="lname" required />
