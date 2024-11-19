@@ -12,7 +12,7 @@
   cursor: pointer;
 }
 
-.tab-titles {
+.tab-titles11 {
   color: white;
   display: flex;
   margin-top: 40px;
@@ -24,13 +24,13 @@
   font-style: normal;
   color: white;
 }
-.tab-titles .tab-links {
+.tab-titles11 .tab-links {
   padding: 10px;
   width: 170px;
   background-color: #dddddd;
   color: black;
 }
-.tab-titles .active-link {
+.tab-titles11 .active-link {
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   background-color: #bb1e3b;

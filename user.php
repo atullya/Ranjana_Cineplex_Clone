@@ -120,7 +120,7 @@ if($success){
 }
                 ?>
     <section id="container-body">
-    <div class="tab-titles">
+    <div class="tab-titles11">
                         <p class="tab-links " onclick="opentab('password')">Change Password</p>
                         <p class="tab-links active-link" onclick="opentab('profile')">Edit Profile</p>
                      

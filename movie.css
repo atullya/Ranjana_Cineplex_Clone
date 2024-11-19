@@ -56,7 +56,7 @@
 }
 #show,
 #upcoming-show {
-  padding: 0 60px;
+  padding: 0 50px;
   display: flex;
   margin: auto;
   flex-wrap: wrap;

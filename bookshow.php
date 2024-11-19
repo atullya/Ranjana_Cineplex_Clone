@@ -57,12 +57,12 @@ echo'<div class="title-div"></div>
         <div class="cell" id="A3">A3</div>
         <div class="cell" id="A4">A4</div>
         <div class="cell" id="A5">A5</div>
-        <div class="cell" id="A6">A6</div>
+        <div class="cell booked" id="A6">A6</div>
         <div class="cell" id="A7">A7</div>
         <div class="cell" id="A8">A8</div>
         <div class="cell" id="A9">A9</div>
         <div class="cell" id="A10">A10</div>
-        <div class="cell" id="A11">A11</div>
+        <div class="cell booked" id="A11">A11</div>
         <div class="cell" id="A12">A12</div>
         <div class="cell" id="A13">A13</div>
         <div class="cell" id="A14">A14</div>
@@ -173,6 +173,7 @@ echo'<div class="title-div"></div>
         <div class="cell" id="G17">G17</div>
       </div>
     </section>
+      <div class="screen">SCREEN</div>
 
     <div class="form-popup" id="myForm">
       <form class="form-container">
@@ -188,6 +189,7 @@ echo'<div class="title-div"></div>
     <section id="total">
       Rs.
       <div id="showsum">0</div>
+      <button id="showbtn">Book</button>
     </section>';
   }
     ?>
@@ -207,11 +209,11 @@ echo'<div class="title-div"></div>
       let parsebookdata = JSON.parse(getbookdata);
       console.log(parsebookdata);
       const date = new Date();
-
+      
       let day = date.getDate();
       let month = date.getMonth() + 1;
       let year = date.getFullYear();
-
+      
       // This arrangement can be altered based on how we want the date's format to appear.
       let currentDate = `${year}-${month}-${day}`;
       console.log(currentDate);
@@ -225,6 +227,16 @@ echo'<div class="title-div"></div>
       // Get all elements with the class 'cell'
       const cells = document.querySelectorAll(".grid .cell");
       let selectedCount = 0; // Track the number of selected cells
+      let showbtn=document.getElementById('showbtn');
+      if (selectedCount > 0) {
+    showbtn.style.display = "block";
+  } else {
+    showbtn.style.display = "none";
+  }
+  document.addEventListener("DOMContentLoaded", function() {
+  const showbtn = document.getElementById("showbtn");
+  showbtn.style.display = "none"; // Hide initially if no seats are selected
+});
 
       cells.forEach((cell) => {
         cell.addEventListener("click", function () {

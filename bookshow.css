@@ -89,28 +89,15 @@ body {
   grid-template-rows: repeat(7, 45px);
   gap: 10px;
 }
-.cell:nth-child(1) {
-  grid-column: 3 / span 1;
+
+.cell:nth-child(66) {
+  /* grid-column: 1; */
+  grid-column-end: 9;
 }
-.cell:nth-child(16) {
-  grid-column: 3 / span 1;
-}
-.cell:nth-child(16) {
-  grid-column: 3 / span 1;
+.cell:nth-child(60) {
+  grid-column: span 3;
 }
 
-.cell:nth-child(37) {
-  grid-column: 11;
-}
-.cell:nth-child(50) {
-  grid-column: 11;
-}
-.cell:nth-child(63) {
-  grid-column: 1;
-}
-.cell:nth-child(83) {
-  grid-column: 11;
-}
 .cell {
   display: flex;
   cursor: pointer;
@@ -121,6 +108,31 @@ body {
   color: white;
   font-weight: bold;
   border: 1px solid #ddd;
+}
+.seat.sold {
+  background-color: #9e9e9e; /* Sold seat color (grey) */
+  cursor: not-allowed;
+}
+.booked {
+  background-color: #f44336; /* Booked seat color (red) */
+  cursor: not-allowed; /* Disable clicking */
+}
+.screen {
+
+  text-align: center;
+  background-color: #440000;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 5px;
+  width: 800px;
+  margin: auto;
+  margin-top: -29px;
+  /* margin-bottom: -20px; */
+  border-radius: 5px;
+  border-bottom-left-radius: 23px;
+  border-bottom-right-radius: 23px;
+  margin-bottom: 20px;
 }
 
 #total {
