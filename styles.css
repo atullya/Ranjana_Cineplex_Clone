@@ -295,6 +295,13 @@ nav .after .icon {
   flex-wrap: wrap;
   gap: 32px;
 }
+#hero #movie #show-movie1 {
+  padding: 0 60px;
+  display: flex;
+  margin: auto;
+  flex-wrap: wrap;
+  gap: 32px;
+}
 #carousel1 {
   display: flex;
   margin: auto;
@@ -309,7 +316,27 @@ nav .after .icon {
   position: relative;
   margin-bottom: 40px;
 }
+#hero #movie #show-movie1 .movies,
+#carousel1 .movies {
+  background-color: #13161f;
+  padding: 15px;
+  width: 270px;
+  position: relative;
+  margin-bottom: 40px;
+}
 #hero #movie #show-movie .movies:hover .layer,
+#carousel .movies:hover .layer {
+  height: 100%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    /* Reduced opacity to make it lighter */ rgba(121, 9, 9, 0.3) 50%,
+    /* Reduced opacity for a lighter red */ rgba(0, 212, 255, 0.3) 100%
+      /* Reduced opacity for a lighter cyan */
+  );
+}
+#hero #movie #show-movie1 .movies:hover .layer,
 #carousel .movies:hover .layer {
   height: 100%;
   background: rgb(0, 0, 0);
@@ -365,7 +392,16 @@ nav .after .icon {
   height: auto;
   border-radius: 15px;
 }
-#hero #movie #show-movie .movies .title {
+#hero #movie #show-movie1 .movies img,
+#carousel1 .movies img {
+  object-fit: cover;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+#hero #movie #show-movie .movies .title,
+#hero #movie #show-movie1 .movies .title {
   color: white;
   font-size: 21px;
   font-family: "Poppins", sans-serif, -apple-system, BlinkMacSystemFont,
@@ -384,6 +420,16 @@ nav .after .icon {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 #hero #movie #show-movie .movies .duration {
+  color: #7a7b80;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  font-style: normal;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+#hero #movie #show-movie1 .movies .duration {
   color: #7a7b80;
   font-size: 15px;
   font-family: "Poppins", sans-serif;

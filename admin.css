@@ -1,0 +1,140 @@
+/* General Reset */
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Wrapper for layout */
+#wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar styles */
+#sidebar {
+  width: 250px;
+  background-color: #010431;
+  color: white;
+  padding: 20px;
+  /* box-shadow: 2px 0 5px #010431; */
+}
+
+#sidebar h2 {
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin-bottom: 20px;
+}
+
+#sidebar nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 50px;
+}
+
+#sidebar nav ul li {
+  margin: -10px 30px;
+  width: 215px;
+  /* text-align: center; */
+  font-size: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 24px;
+}
+
+#sidebar nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+#sidebar nav ul li a:hover {
+  background-color: #34495e;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+/* Main content styles */
+#main-content {
+  /* Allow main content to take remaining space */
+  padding: 20px;
+  flex: 1;
+}
+
+#main-content h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#movieList {
+  margin-top: 20px;
+}
+
+/* Form styles */
+form {
+  max-width: 600px; /* Limit form width */
+  margin: auto; /* Center the form */
+}
+
+form input[type="text"],
+form input[type="date"],
+form textarea,
+form input[type="file"] {
+  width: calc(100% - 20px); /* Full width minus padding */
+  padding: 10px; /* Add some padding */
+  margin-bottom: 15px; /* Space between fields */
+}
+
+form button[type="submit"] {
+  background-color: #2980b9; /* Button color */
+  color: white; /* Text color */
+  border: none; /* Remove border */
+  padding: 10px; /* Add padding */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+form button[type="submit"]:hover {
+  background-color: #3498db; /* Darker blue on hover */
+}
+
+/* Movie list item styles */
+#movieList div {
+  border-bottom: 1px solid #ccc; /* Separator between movies */
+  padding-bottom: 15px; /* Space below each movie item */
+}
+
+#movieList img {
+  max-width: 100%; /* Responsive image size */
+}
+.custom-btn {
+  background-color: #4caf50; /* Green color */
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin: 20px auto;
+  display: block; /* Center the button */
+}
+
+.custom-btn:hover {
+  background-color: #45a049; /* Slightly darker green */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Deeper shadow */
+}
+
+.custom-btn:active {
+  background-color: #3e8e41; /* Even darker green */
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.2); /* Inner shadow */
+  transform: scale(0.98); /* Slight shrink effect */
+}

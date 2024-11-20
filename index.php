@@ -121,6 +121,9 @@ if (isset($_GET['logout'])) {
         <section id="movie">
   <div id="show-movie"></div>
 </section>
+        <section id="movie">
+  <div id="show-movie1"></div>
+</section>
 <section id="top-rated">
   <div class="main-heading">
     <h2>Top Rated</h2>
@@ -221,6 +224,19 @@ if (isset($_GET['logout'])) {
     <script>
      
       let allData = [];
+      let apiData=[];
+      async function getApiData(){
+        try{
+          let res=await fetch("http://localhost/ranjana/RestAPI.php")
+          let data1 = await res.json();
+        console.log(data1);
+        apiData  = data1;
+displayApiData(data1)
+
+        }catch(error){
+          console.log(error);
+        }
+      }
       async function getData() {
         let response = await fetch("movie.json");
         console.log(response);
@@ -229,6 +245,26 @@ if (isset($_GET['logout'])) {
         allData = data;
         display(data);
       }
+      function displayApiData(data) {
+  let content = "";
+  let showmovie1 = document.getElementById("show-movie1");
+  data.forEach((element, index) => {
+    // Set a fallback image if element.image is not available
+    const imageUrl = element.image ? element.image : 'path/to/fallback-image.jpg'; // Add your fallback image path here
+
+    content += `
+      <div class="movies">
+        <img src="${imageUrl}" alt="${element.title}">
+        <p class="title">${element.title}</p>
+        <p class="duration">${element.duration}</p>
+        <div class="layer">
+          <button class="btn" onclick="trailer(event,${element.vid})">Trailer</button>
+          <button class="btn" onclick="detail(event, ${index})">Buy Now</button>
+        </div>
+      </div>`;
+  });
+  showmovie1.innerHTML = content;
+}
       function display(data) {
         let content = "";
         let showmovie = document.getElementById("show-movie");
@@ -301,6 +337,7 @@ if (isset($_GET['logout'])) {
       }
 
       getData();
+      getApiData();
 
       //for most rated
       function opentab(tabname, type) {

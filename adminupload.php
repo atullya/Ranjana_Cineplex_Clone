@@ -4,112 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Movie Management</title>
-    <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="admin.css">
 </head>
 <body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <h2 style="margin-top:70px">Admin Panel</h2>
+            <nav>
+                <ul>
+                <li ><a href="adminhome.php"><i class="fa-solid fa-house " style="margin-right:12px"></i>Home</a></li>
+                    <li><a href="adminupload.php" id="addMovieLink" style="margin-right:18px"> <i class="fa-solid fa-clapperboard"></i> Add Movies</a></li>
+                    <li><a href="adminlistalluser.php" style="margin-right:18px"><i class="fa-solid fa-users"></i> List All Users</a></li>
+                    <li><a href="#logout"> <i class="fa-solid fa-right-from-bracket"></i>   Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-    <h1>Admin Movie Management</h1>
-    <button id="loadMovies">Load Movies</button>
-    <div id="movieList"></div>
+        <!-- Main Content -->
+        <div id="main-content">
+            <h1  >Admin Movie Management</h1>
+            <button id="loadMovies" class="custom-btn">Load Movies</button>
 
-    <h2>Add New Movie</h2>
-    <form id="movieForm" enctype="multipart/form-data">
-        <input type="text" id="title" placeholder="Title" required><br>
-        <input type="text" id="duration" placeholder="Duration" required><br>
-        <input type="text" id="available_time" placeholder="Available Time (comma-separated)" required><br>
-        <input type="text" id="genere" placeholder="Genre" required><br>
-        <textarea id="description" placeholder="Description" required></textarea><br>
-        <input type="text" id="director" placeholder="Director" required><br>
-        <input type="text" id="cast" placeholder="Cast" required><br>
-        <input type="date" id="releaseon" placeholder="Release Date" required><br>
-        
-        <!-- Image File Upload -->
-        <input type="file" id="image" accept="image/*" required><br>
-        
-        <!-- Video File Upload -->
-        <input type="file" id="vid" accept="video/*" required><br>
-        
-        <button type="submit">Add Movie</button>
-    </form>
+
+            <div id="movieList"></div>
+
+            <h2 style="display: block; margin: 0 auto; text-align: center;">Add New Movie</h2>
+            <form id="movieForm" enctype="multipart/form-data">
+                <input type="text" id="title" placeholder="Title" required><br>
+                <input type="text" id="duration" placeholder="Duration" required><br>
+                <input type="text" id="available_time" placeholder="Available Time (comma-separated)" required><br>
+                <input type="text" id="genere" placeholder="Genre" required><br>
+                <textarea id="description" placeholder="Description" required></textarea><br>
+                <input type="text" id="director" placeholder="Director" required><br>
+                <input type="text" id="cast" placeholder="Cast" required><br>
+                <input type="date" id="releaseon" placeholder="Release Date" required><br>
+
+                <!-- Image File Upload -->
+                <input type="file" id="image" accept="image/*" required><br>
+
+                <!-- Video File Upload -->
+                <input type="file" id="vid" accept="video/*" required><br>
+
+                <button type="submit">Add Movie</button>
+            </form>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
 </html>
 
-
-
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-    }
-
-    h1 {
-        text-align: center;
-        color: #333;
-    }
-
-    button {
-        margin: 10px;
-        padding: 10px;
-        background-color: #5cb85c;
-        color: white;
-        border: none;
-        cursor: pointer;
-    }
-
-    button:hover {
-        background-color: #4cae4c;
-    }
-
-    form {
-        margin: 20px auto;
-        width: 300px;
-    }
-
-    form input, form textarea {
-        width: 100%;
-        padding: 10px;
-        margin: 5px 0;
-    }
-
-    form button {
-        background-color: #0275d8;
-    }
-
-    #movieList {
-        margin: 20px;
-        padding: 10px;
-        background-color: white;
-        border-radius: 5px;
-    }
-
-    #movieList img {
-        margin-top: 10px;
-        border-radius: 8px;
-    }
-
-    #movieList div {
-        margin: 10px 0;
-        padding: 10px;
-        background-color: #f9f9f9;
-        border-radius: 5px;
-    }
-
-    #movieList div button {
-        background-color: red;
-        color: white;
-        border: none;
-        padding: 5px 10px;
-        cursor: pointer;
-    }
-
-    #movieList div button:hover {
-        background-color: darkred;
-    }
-</style>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
